@@ -1,0 +1,9 @@
+scenarios:
+  - name: "requests for generate code function"
+    beforeScenario: generatePostBody
+    flow:
+      - post:
+          url: "/hooks/addcode"
+          # Define parameters as {{{xxx}} when posting
+          json:
+            "{{ data }}"

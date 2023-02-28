@@ -1,0 +1,25 @@
+config:
+  target: "https://test-public-api.uni-voice.biz"
+  processor: "./post-body.js"
+  phases:
+    # - duration: 300
+    #   arrivalRate: 10
+    #   name: Warm up
+    - duration: 20
+      arrivalRate: 50
+      rampTo: 50
+      name: Ram up load test
+    # - duration: 600
+    #   arrivalRate: 50
+    #   name: stress test in 10 minutes
+  defaults:
+    headers:
+      # gateway api 
+      x-api-key: "N5dhU9Dlm92LUzxWuqKJF9AThTG6L6SadotvGfF4"
+      # api key with rate limit
+      # dev api key
+      # x-api-key: "g11ToZStCq6D72K0nev767gkfNVdRUAB6i2uPBUP"
+      # uv secret key
+      x-uv-key: "7e5dd790c3324bb69580"
+      # x-uv-key: "c548d835d3d9d633bdde"
+      Content-Type: "application/json"
